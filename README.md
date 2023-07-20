@@ -1,0 +1,2 @@
+# elona_pcc_to_isekai_creation_person
+elonaのPCCを異世界の創造者のアニメーションチップにコンバートする
