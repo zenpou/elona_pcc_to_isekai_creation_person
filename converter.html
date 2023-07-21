@@ -4,15 +4,17 @@
   <title>Image Processor</title>
 </head>
 <body>
+  <h1>elonaのPCCファイルを異世界の創造者向けに変換するツール</h1>
   <div>
-    pccファイルを選択すると、画像の左から1,2,4列目を選択した画像に変換します。
+    <p>pccファイルを選択すると、PCC画像の左から1,2,4列目を選択し、一つ一つを32x64pxのサイズの画像に変換します。</p>
+    <p>最後に、Download Imageをクリックすれば画像がダウンロードされます</p>
   </div>
   <div>
     <input type="file" id="imageLoader" name="imageLoader" />
   </div>
   <div>
     <canvas id="resultCanvas" width="96" height="256" style="border:1px solid #000000;"></canvas>
-    <a id="downloadBtn" download="31.png" style="display: none;">Download Image</a>
+    <a id="downloadBtn" download="31.png" style="display: none;color: blue;">Download Image</a>
   </div>
   <script>
     var imageLoader = document.getElementById('imageLoader');
@@ -26,6 +28,7 @@
     });
 
     function handleImage(e) {
+      resultCtx.clearRect(0, 0, resultCanvas.width, resultCanvas.height);
       var reader = new FileReader();
       reader.onload = function (event) {
         var img = new Image();
